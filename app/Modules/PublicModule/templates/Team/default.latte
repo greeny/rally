@@ -1,0 +1,36 @@
+{block content}
+
+<h1 n:inner-block="title">
+    {_'messages.title.teams'}
+</h1>
+
+<a n:href="create" class="btn btn-success">
+    {_'messages.team.create'}
+</a>
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{_'messages.teamGrid.name'}</th>
+                <th n:foreach="$roles as $role">
+                    {$role->translation($lang)->name}
+                </th>
+                <th>{_'messages.grid.actions'}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr n:foreach="$teams as $team">
+                <td>{$team->name}</td>
+                <td n:foreach="$roles as $role">
+                    {foreach $team->getMembersByRole($role) as $member}
+                        {$member->name} {$member->surname}{sep}<br>{/sep}
+                    {/foreach}
+                </td>
+                <td>
+                    <a n:href="edit, $team->id">{_'messages.grid.edit'}</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

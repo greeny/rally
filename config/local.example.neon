@@ -1,0 +1,7 @@
+nettrine.dbal:
+	connection:
+		user: root
+		password: root
+
+parameters:
+	calendarUrl: 'https://calendar.google.com/calendar/ical/a39d4a893caabe2ff79edee4acb80a052f34dace2307836e9d707418d63a77cc%40group.calendar.google.com/public/basic.ics'

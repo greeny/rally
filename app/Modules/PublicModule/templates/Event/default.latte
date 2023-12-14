@@ -1,0 +1,76 @@
+{block content}
+
+<h1 n:inner-block="title">
+    {_'messages.title.events'}
+</h1>
+
+<a n:href="export!" class="btn btn-success">
+    {_'messages.event.export'}
+</a>
+<a n:href="sync!" class="ajax btn btn-warning">
+    {_'messages.event.sync'}
+</a>
+
+{snippet eventGrid}
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{_'messages.eventGrid.name'}</th>
+                <th>{_'messages.eventGrid.from'}</th>
+                <th>{_'messages.eventGrid.to'}</th>
+                <th>{_'messages.grid.actions'}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr n:foreach="$events as $event">
+                <td>{$event->name}</td>
+                <td>{$event->start|date}</td>
+                <td>{$event->end|date}</td>
+                <td>
+                    <a href="javascript: void(0);" type="button" data-bs-toggle="modal" data-bs-target="#inviteModal" data-bs-event="{$event->id}">
+                        {_'messages.eventGrid.invite'}
+                    </a>
+                    {*<a n:href="invite! $event->id" class="ajax">{_'messages.eventGrid.invite'}</a>*}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="inviteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">{_'messages.event.invite'}</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                {control inviteForm}
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{_'messages.event.close'}</button>
+            </div>
+        </div>
+    </div>
+</div>
+{/snippet}
+
+{/block}
+
+{block scripts}
+{include parent}
+<script>
+    const modal = document.getElementById('inviteModal');
+    if (modal) {
+        modal.addEventListener('show.bs.modal', event => {
+            const button = event.relatedTarget;
+            const eventId = button.getAttribute('data-bs-event');
+
+            const eventInput = modal.querySelector('.modal-body input[name="event"]');
+            eventInput.value = eventId;
+        });
+    }
+
+    naja.addEventListener('complete', (event) => {
+        document.querySelector('.modal-backdrop').remove();
+    });
+</script>

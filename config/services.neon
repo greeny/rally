@@ -1,0 +1,12 @@
+services:
+	- Rally\Model\Calendar\CalendarParser(%calendarUrl%, %appDir%/../log/calendar)
+	- Rally\Model\NullableTypedFieldMapper
+
+	- Rally\Router\RouterFactory::createRouter
+
+search:
+	- in: %appDir%
+		classes:
+			- *Factory
+			- *Repository
+			- *Command

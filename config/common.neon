@@ -1,0 +1,61 @@
+parameters:
+
+application:
+	errorPresenter: Error
+	mapping:
+		*: Rally\Modules\*Module\*Presenter
+
+decorator:
+	Doctrine\ORM\Configuration:
+		setup:
+			- setTypedFieldMapper
+
+	Rally\UI\BaseForm:
+		setup:
+			- setTranslator
+
+di:
+	export:
+		parameters: no
+		tags: no
+
+extensions:
+	console: Contributte\Console\DI\ConsoleExtension(%consoleMode%)
+	nettrine.dbal: Nettrine\DBAL\DI\DbalExtension
+	nettrine.cache: Nettrine\Cache\DI\CacheExtension
+	nettrine.orm: Nettrine\ORM\DI\OrmExtension
+	nettrine.orm.attributes: Nettrine\ORM\DI\OrmAttributesExtension
+	nettrine.orm.console: Nettrine\ORM\DI\OrmConsoleExtension(%consoleMode%)
+	translation: Contributte\Translation\DI\TranslationExtension
+
+latte:
+	strictTypes: yes
+
+nettrine.dbal:
+	debug:
+		panel: %debugMode%
+		sourcePaths: [%appDir%]
+	connection:
+		host: localhost
+		driver: mysqli
+		dbname: rally
+
+nettrine.orm:
+	configuration:
+		autoGenerateProxyClasses: %debugMode%
+
+nettrine.orm.attributes:
+	mapping:
+		Rally\Model\Entity: %appDir%/Model/Entity
+
+session:
+	expiration: 14 days
+
+translation:
+	locales:
+		whitelist: [en, cs]
+		default: en
+		fallback: [en]
+	dirs:
+		- %appDir%/../lang
+	returnOriginalMessage: true

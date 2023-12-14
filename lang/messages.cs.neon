@@ -1,0 +1,69 @@
+appTitle: Konfigurátor rallye
+
+flashes:
+	member:
+		created: Člen vytvořen.
+		edited: Člen upraven.
+	team:
+		created: Tým vytvořen.
+		edited: Tým upraven.
+	register:
+		success: Registrace úspěšně dokončena.
+	login:
+		success: Přihlášení úspěšné.
+	sync:
+		completed: Synchronizace dokončena.
+	event:
+		invited: Pozvánka odeslána.
+
+navbar:
+	home: Domů
+	events: Události
+	members: Členové
+	teams: Týmy
+	register: Registrovat
+	login: Přihlásit se
+	logout: Odhlásit se
+	notLogged: Nejste přihlášeni
+
+title:
+	home: Konfigurátor rallye
+	login: Přihlášení
+	register: Registrace
+	events: Seznam událostí
+	members: Seznam členů
+	createMember: Vytvořit člena
+	editMember: Upravit člena
+	teams: Seznam týmů
+	createTeam: Vytvořit tým
+	editTeam: Upravit tým
+
+grid:
+	actions: Akce
+	edit: Upravit
+
+event:
+	export: Exportovat události do CSV
+	sync: Synchronizovat události z externího kalendáře
+	invite: Pozvat přítele
+	close: Zavřít
+
+eventGrid:
+	name: Název
+	from: Od
+	to: Do
+	invite: Pozvat
+
+member:
+	create: Vytvořit člena
+
+team:
+	create: Vytvořit tým
+
+memberGrid:
+	name: Jméno
+	surname: Příjmení
+	roles: Role
+
+teamGrid:
+	name: Název

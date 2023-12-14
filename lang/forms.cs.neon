@@ -1,0 +1,68 @@
+login:
+	fields:
+		login: Přihlášení
+		password: Heslo
+		submit: Přihlásit se
+	errors:
+		login:
+			required: 'Prosím, zadejte přihlašovací jméno.'
+			notFound: Přihlašovací jméno nenalezeno.
+		password:
+			required: 'Prosím, zadejte heslo.'
+			invalid: Neplatné heslo.
+
+register:
+	fields:
+		login: Přihlašovací jméno
+		password: Heslo
+		password2: Opakujte heslo
+		submit: Registrovat
+	errors:
+		login:
+			required: 'Prosím, zadejte přihlašovací jméno.'
+			duplicate: Uživatel s tímto přihlašovacím jménem již existuje.
+		password:
+			required: 'Prosím, zadejte heslo.'
+			notEqual: Hesla se neshodují.
+
+member:
+	fields:
+		name: Jméno
+		surname: Příjmení
+		roles: Role
+		submit: Uložit
+	errors:
+		name:
+			required: 'Prosím, zadejte jméno.'
+		surname:
+			required: 'Prosím, zadejte příjmení.'
+		roles:
+			required: 'Prosím, vyberte alespoň jednu roli.'
+
+team:
+	fields:
+		name: Název
+		submit: Uložit
+	description:
+		members: 'Vyberte mezi %min% a %max% členy.'
+		membersExact: 'Vyberte %min% členy.'
+	errors:
+		name:
+			required: 'Prosím, zadejte název týmu.'
+		members:
+			min: 'Prosím, vyberte alespoň %min% člena pro %role%.'
+			max: 'Prosím, vyberte maximálně %max% člena pro %role%.'
+			duplicate: 'Člena %member% nelze vybrat pro %role%, člen byl již vybrán pro jinou roli.'
+
+invite:
+	fields:
+		email: Email
+		submit: Pozvat
+	errors:
+		email:
+			required: 'Prosím, zadejte email.'
+			valid: 'Prosím, zadejte platný email.'
+
+inviteEmail:
+	subject: Pozvánka na %event%
+	body: Byli jste pozváni přítelem na událost %event%. Těšíme se na setkání!

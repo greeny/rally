@@ -1,0 +1,68 @@
+login:
+	fields:
+		login: Login
+		password: Password
+		submit: Log in
+	errors:
+		login:
+			required: Please enter login.
+			notFound: Login not found.
+		password:
+			required: Please enter password.
+			invalid: Invalid password.
+
+register:
+	fields:
+		login: Login
+		password: Password
+		password2: Repeat password
+		submit: Register
+	errors:
+		login:
+			required: Please enter login.
+			duplicate: User with this login already exists.
+		password:
+			required: Please enter password.
+			notEqual: Passwords are not the same.
+
+member:
+	fields:
+		name: Name
+		surname: Surname
+		roles: Roles
+		submit: Save
+	errors:
+		name:
+			required: Please enter name.
+		surname:
+			required: Please enter surname.
+		roles:
+			required: Please select at least one role.
+
+team:
+	fields:
+		name: Name
+		submit: Save
+	description:
+		members: 'Select between %min% and %max% member(s).'
+		membersExact: 'Select %min% member(s).'
+	errors:
+		name:
+			required: Please enter team name.
+		members:
+			min: 'Please select at least %min% member(s) for %role%.'
+			max: 'Please select at most %max% member(s) for %role%.'
+			duplicate: 'Member %member% cannot be selected for %role%, that member has already been selected for other role.'
+
+invite:
+	fields:
+		email: Email
+		submit: Invite
+	errors:
+		email:
+			required: Please enter email.
+			valid: Please enter valid email.
+
+inviteEmail:
+	subject: Invitation to %event%
+	body: You have been invited by a friend to attend %event%. See you there!

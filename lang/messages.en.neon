@@ -1,0 +1,69 @@
+appTitle: Rally configurator
+
+flashes:
+	member:
+		created: Member created.
+		edited: Member edited.
+	team:
+		created: Team created.
+		edited: Team edited.
+	register:
+		success: Registration completed successfully.
+	login:
+		success: Login successful.
+	sync:
+		completed: Synchronization complete.
+	event:
+		invited: Invitation sent.
+
+navbar:
+	home: Home
+	events: Events
+	members: Members
+	teams: Teams
+	register: Register
+	login: Login
+	logout: Logout
+	notLogged: Not logged in
+
+title:
+	home: Rally configurator
+	login: Login
+	register: Register
+	events: Event list
+	members: Member list
+	createMember: Create member
+	editMember: Edit member
+	teams: Team list
+	createTeam: Create team
+	editTeam: Edit team
+
+grid:
+	actions: Actions
+	edit: Edit
+
+event:
+	export: Export events to CSV
+	sync: Synchronize events from external calendar
+	invite: Invite friend
+	close: Close
+
+eventGrid:
+	name: Name
+	from: From
+	to: To
+	invite: Invite
+
+member:
+	create: Create member
+
+team:
+	create: Create team
+
+memberGrid:
+	name: Name
+	surname: Surname
+	roles: Roles
+
+teamGrid:
+	name: Name
